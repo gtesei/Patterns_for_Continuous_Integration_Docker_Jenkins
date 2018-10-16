@@ -4,6 +4,7 @@ pipeline {
         stage('build') {
             steps {
                 sh "python --version"
+                sh "sudo ps -a"
                 sh "sudo apt-get install python-pip python-dev build-essential"
                 sh "sudo pip install --upgrade pip"
                 sh "sudo pip install --upgrade virtualenv"

@@ -6,9 +6,9 @@ pipeline {
         stage('build') {
             steps {
                 sh "python --version"
-                sh "apt-get install python-pip python-dev build-essential"
-                sh "sudo pip install --upgrade pip"
-                sh "sudo pip install --upgrade virtualenv"
+                #sh "apt-get install python-pip python-dev build-essential"
+                #sh "sudo pip install --upgrade pip"
+                #sh "sudo pip install --upgrade virtualenv"
                 sh "sudo pip install -r requirements-dev.txt"
                 sh "sudo pip install pytest pytest-cov"
                 sh "sudo pip install coveralls"

@@ -21,7 +21,7 @@ pipeline {
                 sh "py.test --doctest-modules --cov"
             }
         }
-        stage('test') {
+        stage('coveralls') {
           steps {
             sh 'coverage run --source=python_dev_docker_project setup.py test'
             sh 'COVERALLS_REPO_TOKEN=credentials('coveralls_token') coveralls'

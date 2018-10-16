@@ -10,6 +10,7 @@ pipeline {
                 sh "pip install pytest pytest-cov"
                 sh "pip install coveralls"
             }
+        }
         stage('build') {
             steps {
                 sh "py.test --doctest-modules --cov"

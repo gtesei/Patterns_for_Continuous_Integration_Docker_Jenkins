@@ -1,6 +1,6 @@
 import os
 
-from setuptools import find_packages, setup
+from setuptools import find_packages, setup, Extension
 
 HERE = os.path.abspath(os.path.dirname(__file__))
 
@@ -14,7 +14,7 @@ setup(
     name='python-dev-docker-project',
     version='0.5.2.dev0',
     license='BSD-3-Clause',
-    url='https://github.com/gtesei/Patterns_for_Continuous_Integration_Docker_Travis_CI_2_DEV',
+    url='https://github.com/gtesei/Patterns_for_Continuous_Integration_Docker_Jenkins',
     description='',
     long_description=read('README.md'),
     long_description_content_type="text/markdown",

@@ -3,15 +3,21 @@ pipeline {
                      args '-u root:sudo' 
                      } }
     stages {
-        stage('build') {
+        stage('install') {
             steps {
                 sh "python --version"
                 sh "pip install -r requirements-dev.txt"
                 sh "pip install pytest pytest-cov"
                 sh "pip install coveralls"
-                sh "pip install -e ."
+            }
+        stage('build') {
+            steps {
                 sh "py.test --doctest-modules --cov"
-
+            }
+        }
+        stage('test') {
+            steps {
+                sh "py.test --doctest-modules --cov"
             }
         }
     }

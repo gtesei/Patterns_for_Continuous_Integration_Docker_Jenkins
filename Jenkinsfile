@@ -23,7 +23,7 @@ pipeline {
         }
         stage('coveralls') {
           environment {
-            COVERALLS_REPO_TOKEN = credentials('coveralls_token')
+            COVERALLS_REPO_TOKEN = credentials('d79070bd-2e2b-4a91-ba27-e1ecd68897ad')
           }
           steps {
             sh "coverage run --source=python_dev_docker_project setup.py test"

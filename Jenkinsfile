@@ -29,8 +29,9 @@ pipeline {
           }
           steps {
             sh "echo $COVERALLS_REPO_TOKEN"
-            sh "coverage run --source=python_dev_docker_project setup.py test"
+            sh "coverage run --source=python_dev_docker_project/* setup.py test"
             sh "py.test --doctest-modules --cov"
+            SH "coverage report -m"
             sh "COVERALLS_REPO_TOKEN=$COVERALLS_REPO_TOKEN_PSW coveralls"
           }
         }

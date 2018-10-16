@@ -27,6 +27,7 @@ pipeline {
           }
           steps {
             sh "coverage run --source=python_dev_docker_project setup.py test"
+            sh "echo $COVERALLS_REPO_TOKEN"
             sh "COVERALLS_REPO_TOKEN=$COVERALLS_REPO_TOKEN coveralls"
           }
         }

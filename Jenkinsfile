@@ -27,7 +27,7 @@ pipeline {
           }
           steps {
             sh "echo $COVERALLS_REPO_TOKEN"
-            sh "COVERALLS_REPO_TOKEN=$COVERALLS_REPO_TOKEN COVERALLS_HOST="https://coveralls.io" coveralls"
+            sh "COVERALLS_REPO_TOKEN=$COVERALLS_REPO_TOKEN COVERALLS_HOST='https://coveralls.io' coveralls"
           }
         }
     }

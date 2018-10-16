@@ -22,9 +22,12 @@ pipeline {
             }
         }
         stage('coveralls') {
+          environment {
+            COVERALLS_REPO_TOKEN = credentials('coveralls_token')
+          }
           steps {
             sh "coverage run --source=python_dev_docker_project setup.py test"
-            sh "COVERALLS_REPO_TOKEN=credentials('coveralls_token') coveralls"
+            sh "COVERALLS_REPO_TOKEN=$COVERALLS_REPO_TOKEN coveralls"
           }
         }
     }

@@ -4,13 +4,13 @@ pipeline {
         stage('build') {
             steps {
                 sh 'python --version'
-                sh 'sudo apt-get install python-pip python-dev build-essential'
-                sh 'sudo pip install --upgrade pip'
-                sh 'sudo pip install --upgrade virtualenv'
-                sh 'sudo pip install -r requirements-dev.txt'
-                sh 'sudo pip install pytest pytest-cov' 
-                sh 'sudo pip install coveralls'
-                sh 'sudo pip install -e .'
+                sh 'apt-get install python-pip python-dev build-essential'
+                sh 'pip install --upgrade pip'
+                sh 'pip install --upgrade virtualenv'
+                sh 'pip install -r requirements-dev.txt'
+                sh 'pip install pytest pytest-cov' 
+                sh 'pip install coveralls'
+                sh 'pip install -e .'
                 sh 'py.test --doctest-modules --cov'
 
             }

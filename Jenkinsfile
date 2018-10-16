@@ -10,6 +10,7 @@ pipeline {
                 sh "pip install -r requirements-dev.txt"
                 sh "pip install pytest pytest-cov"
                 sh "pip install coveralls"
+                sh "pip install coverage"
             }
         }
         stage('build') {

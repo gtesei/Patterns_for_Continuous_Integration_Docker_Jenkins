@@ -7,10 +7,10 @@ pipeline {
         stage('build') {
             steps {
                 sh 'python --version'
-                sh 'pip install -r requirements-dev.txt'
-                sh 'pip install pytest pytest-cov' 
-                sh 'pip install coveralls'
-                sh 'pip install -e .'
+                sh 'sudo pip install -r requirements-dev.txt'
+                sh 'sudo pip install pytest pytest-cov' 
+                sh 'sudo pip install coveralls'
+                sh 'sudo pip install -e .'
                 sh 'py.test --doctest-modules --cov'
 
             }

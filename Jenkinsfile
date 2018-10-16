@@ -13,7 +13,7 @@ pipeline {
         }
         stage('build') {
             steps {
-                sh "py.test --doctest-modules --cov"
+                sh "pip install -e ."
             }
         }
         stage('test') {

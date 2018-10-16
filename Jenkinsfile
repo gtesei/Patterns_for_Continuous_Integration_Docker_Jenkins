@@ -6,6 +6,7 @@ pipeline {
         stage('install') {
             steps {
                 sh "python --version"
+                sh "pip install --upgrade pip"
                 sh "pip install -r requirements-dev.txt"
                 sh "pip install pytest pytest-cov"
                 sh "pip install coveralls"

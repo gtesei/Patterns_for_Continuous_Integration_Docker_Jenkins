@@ -88,7 +88,7 @@ see https://jenkins.io/doc/book/using/using-credentials/
 
 ![Pipeline >> Pipeline Script from SCM >> Git](https://raw.githubusercontent.com/gtesei/Patterns_for_Continuous_Integration_Docker_Jenkins/master/img/jen_pip2.PNG)
 
-#### Jenkinsfile
+## Jenkinsfile
 
 ```groovy
 pipeline {

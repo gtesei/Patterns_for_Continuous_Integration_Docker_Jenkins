@@ -73,3 +73,13 @@ see https://jenkins.io/doc/book/using/using-credentials/
 
 ![Using credentials with Jenkins](https://raw.githubusercontent.com/gtesei/Patterns_for_Continuous_Integration_Docker_Jenkins/master/img/jen_cred2.PNG)
 
+## Creating a Pipeline for a Git Project 
+
+#### New Item >> Enter pipeline name and select Pipeline >> OK 
+
+![New Item >> Enter pipeline name and select Pipeline >> OK](https://raw.githubusercontent.com/gtesei/Patterns_for_Continuous_Integration_Docker_Jenkins/master/img/jen_pip.PNG)
+
+#### Pipeline >> Pipeline Script from SCM >> Git >> Enter Git URL >> Save 
+
+![Pipeline >> Pipeline Script from SCM >> Git](https://raw.githubusercontent.com/gtesei/Patterns_for_Continuous_Integration_Docker_Jenkins/master/img/jen_pip2.PNG)
+

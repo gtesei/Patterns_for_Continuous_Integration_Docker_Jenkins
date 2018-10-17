@@ -1,7 +1,7 @@
 pipeline {
     agent none
     stages {
-        stage('installbuildtestcoveralls') {
+        stage('install-build-test-coveralls') {
             agent { docker { image 'python:3.6.1' 
                          args '-u root:sudo' 
                          } }
@@ -16,19 +16,19 @@ pipeline {
                     sh "pip install pytest pytest-cov"
                     sh "pip install coveralls"
                     sh "pip install coverage"
-                }
+                
             
-                steps {
+               
                     sh "pip install -e ."
-                }
+                
             
             
-                steps {
+              
                     sh "py.test --doctest-modules --cov"
-                }
+                
             
             
-              steps {
+          
                 sh "echo $COVERALLS_REPO_TOKEN"
                 sh "coverage run setup.py test"
                 sh "py.test --doctest-modules --cov"

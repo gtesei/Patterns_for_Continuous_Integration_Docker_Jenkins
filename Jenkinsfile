@@ -35,8 +35,8 @@ pipeline {
             sh "COVERALLS_REPO_TOKEN=$COVERALLS_REPO_TOKEN_PSW coveralls"
           }
         }
-        agent any
         stage('docker') {
+          agent none 
           environment {
             IMAGE_NAME = 'gtesei/hello_docker_jenkins'
             DOCKER_REGISTRY = credentials('3897e886-55e9-491f-95f9-bf0280b72966')

@@ -1,7 +1,7 @@
 pipeline {
     agent none
     stages {
-        stage('install/build/test/coveralls') {
+        stage('installbuildtestcoveralls') {
             agent { docker { image 'python:3.6.1' 
                          args '-u root:sudo' 
                          } }

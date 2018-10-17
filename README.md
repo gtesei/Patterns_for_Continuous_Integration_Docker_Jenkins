@@ -61,6 +61,11 @@ git config --global http.sslverify false
 
 ## Using credentials with Jenkins 
 
+Necessary for 
+
+* Docker Hub account 
+* Coveralls account (option)
+
 see https://jenkins.io/doc/book/using/using-credentials/ 
 
 * From the Jenkins home page (i.e. the Dashboard of the Jenkins classic UI), click Credentials > System on the left.

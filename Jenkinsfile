@@ -35,5 +35,20 @@ pipeline {
             sh "COVERALLS_REPO_TOKEN=$COVERALLS_REPO_TOKEN_PSW coveralls"
           }
         }
+        stage('docker') {
+          environment {
+            IMAGE_NAME = 'gtesei/hello_docker_jenkins'
+            DOCKER_REGISTRY = credentials('3897e886-55e9-491f-95f9-bf0280b72966')
+          }
+          steps {
+            sh "docker pull $IMAGE_NAME || true"
+            sh 'docker build --pull --cache-from "${IMAGE_NAME}:develop" --tag "$IMAGE_NAME" .'
+            sh 'docker login -u $DOCKER_REGISTRY_USR -p "$DOCKER_REGISTRY_PWD'
+            sh 'git_sha="$(git rev-parse --short HEAD)"'
+            sh 'docker tag $IMAGE_NAME "${IMAGE_NAME}:develop"'
+            sh 'docker tag "$IMAGE_NAME" "${IMAGE_NAME}:${git_sha}-develop"'
+            sh 'docker push "${IMAGE_NAME}:develop" && docker push "${IMAGE_NAME}:${git_sha}-develop"'
+          }
+        }
     }
 }

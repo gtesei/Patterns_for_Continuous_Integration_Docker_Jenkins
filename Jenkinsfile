@@ -42,7 +42,7 @@ pipeline {
           }
           steps {
             sh "docker pull $IMAGE_NAME || true"
-            sh 'docker build --pull --cache-from "${IMAGE_NAME}:develop" --tag "$IMAGE_NAME" .'
+            sh 'docker build --pull --cache-from "${IMAGE_NAME}:develop" --tag "$IMAGE_NAME" . || true'
             sh 'docker login -u $DOCKER_REGISTRY_USR -p "$DOCKER_REGISTRY_PWD'
             sh 'git_sha="$(git rev-parse --short HEAD)"'
             sh 'docker tag $IMAGE_NAME "${IMAGE_NAME}:develop"'

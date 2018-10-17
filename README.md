@@ -1,6 +1,6 @@
 # Patterns for Continuous Integration with Docker using Jenkins 
 
-## Install Jenkins from Docker 
+## Install Jenkins via Docker 
 
 see https://github.com/jenkinsci/docker/blob/master/README.md
 
@@ -58,3 +58,18 @@ __Note__: use option ```-u 0``` to enter as root
 ```sh
 git config --global http.sslverify false
 ```
+
+## Using credentials with Jenkins 
+
+see https://jenkins.io/doc/book/using/using-credentials/ 
+
+* From the Jenkins home page (i.e. the Dashboard of the Jenkins classic UI), click Credentials > System on the left.
+* Under System, click the Global credentials (unrestricted) link to access this default domain.
+
+![Using credentials with Jenkins](https://raw.githubusercontent.com/gtesei/Patterns_for_Continuous_Integration_Docker_Jenkins/master/img/jen_cred.PNG)
+
+
+![Using credentials with Jenkins](https://raw.githubusercontent.com/gtesei/Patterns_for_Continuous_Integration_Docker_Jenkins/master/img/jen_cred.PNG)
+
+![Using credentials with Jenkins](https://raw.githubusercontent.com/gtesei/Patterns_for_Continuous_Integration_Docker_Jenkins/master/img/jen_cred2.PNG)
+

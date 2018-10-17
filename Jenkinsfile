@@ -1,42 +1,9 @@
 pipeline {
-    agent { docker { image 'python:3.6.1' 
-                     args '-u root:sudo' 
-                     } }
+    agent none
     stages {
-        stage('install') {
-            steps {
-                sh "python --version"
-                sh "pip install --upgrade pip"
-                sh "pip install -r requirements-dev.txt"
-                sh "pip install pytest pytest-cov"
-                sh "pip install coveralls"
-                sh "pip install coverage"
-            }
-        }
-        stage('build') {
-            steps {
-                sh "pip install -e ."
-            }
-        }
-        stage('test') {
-            steps {
-                sh "py.test --doctest-modules --cov"
-            }
-        }
-        stage('coveralls') {
-          environment {
-            COVERALLS_REPO_TOKEN = credentials('d79070bd-2e2b-4a91-ba27-e1ecd68897ad')
-          }
-          steps {
-            sh "echo $COVERALLS_REPO_TOKEN"
-            sh "coverage run setup.py test"
-            sh "py.test --doctest-modules --cov"
-            sh "coverage report -m"
-            sh "COVERALLS_REPO_TOKEN=$COVERALLS_REPO_TOKEN_PSW coveralls"
-          }
-        }
+        
         stage('docker') {
-          agent none 
+          
           environment {
             IMAGE_NAME = 'gtesei/hello_docker_jenkins'
             DOCKER_REGISTRY = credentials('3897e886-55e9-491f-95f9-bf0280b72966')

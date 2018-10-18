@@ -1,5 +1,7 @@
 # Patterns for Continuous Integration with Docker using Jenkins 
 
+![Conceptual Schema](https://raw.githubusercontent.com/gtesei/Patterns_for_Continuous_Integration_Docker_Jenkins/master/img/Docker_Repo_Pattern_Jenkins.png)
+
 ## Install Jenkins via Docker 
 
 see https://github.com/jenkinsci/docker/blob/master/README.md

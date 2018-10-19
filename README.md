@@ -1,5 +1,7 @@
 # Patterns for Continuous Integration with Docker using Jenkins 
 
+__Full story:__ [Patterns of Continuous Integration for Data Science Python Projects](https://medium.com/@gtesei/the-ci-arsenal-that-any-open-source-machine-learning-python-project-should-consider-e34759dd66c4)
+
 ![Conceptual Schema](https://raw.githubusercontent.com/gtesei/Patterns_for_Continuous_Integration_Docker_Jenkins/master/img/Docker_Repo_Pattern_Jenkins.png)
 
 ## Install Jenkins via Docker 
